@@ -1,12 +1,19 @@
 import "./App.css";
+import Calculation from "./components/Calculation/Calculation";
+
+import Main from "./components/Main/Main";
+import Title from "./components/Title/Title";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <button class="inline-block cursor-pointer rounded-md bg-gray-800 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-900">
-        Button
-      </button>
+    <div className="grid  grid-cols-4 font-sans pb-10">
+      <div className="left col-span-3 border-2">
+        <Title></Title>
+        <Main></Main>
+      </div>
+      <div className="right border-2">
+        <Calculation></Calculation>
+      </div>
     </div>
   );
 }
