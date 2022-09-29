@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Calculation = (props) => {
-  //console.log(props);
+  //console.log(props.sports_time);
+  let [break_time, setBreak_time] = useState(0);
+
+  const setValue = (data) => {
+    //alert(typeof data);
+    break_time += data;
+    //console.log(break_time);
+    setBreak_time(break_time);
+  };
+
   return (
     <div className="py-20 bg-slate-600 my-10 mx-5 rounded-lg">
       <div className="header flex p-5 ">
@@ -37,19 +46,29 @@ const Calculation = (props) => {
 
       <div className="details p-5 mx-auto w-4/5 my-5 grid grid-cols-5 bg-cyan-400 content-center gap-5 text-center rounded-lg">
         <div className="div w-10 h-10 text-white bg-black rounded-full	 ">
-          <p className="pt-2 cursor-pointer">10s</p>
+          <p className="pt-2 cursor-pointer">
+            <span onClick={() => setValue(10)}>10s</span>
+          </p>
         </div>
         <div className=" w-10 h-10 text-white bg-black rounded-full div">
-          <p className="pt-2 cursor-pointer">20s</p>
+          <p onClick={() => setValue(20)} className="pt-2 cursor-pointer">
+            20s
+          </p>
         </div>
         <div className="div w-10 h-10 text-white bg-black rounded-full">
-          <p className="pt-2 cursor-pointer">30s</p>
+          <p onClick={() => setValue(30)} className="pt-2 cursor-pointer">
+            30s
+          </p>
         </div>
         <div className="div w-10 h-10 text-white bg-black rounded-full">
-          <p className="pt-2 cursor-pointer">40s</p>
+          <p onClick={() => setValue(40)} className="pt-2 cursor-pointer">
+            40s
+          </p>
         </div>
         <div className="div w-10 h-10 text-white bg-black rounded-full">
-          <p className="pt-2 ">50s</p>
+          <p onClick={() => setValue(50)} className="pt-2 cursor-pointer">
+            50s
+          </p>
         </div>
       </div>
 
@@ -57,11 +76,11 @@ const Calculation = (props) => {
 
       <div className="details p-5 mx-auto w-4/5 my-5 flex  bg-cyan-400 content-center gap-5 text-center text-black rounded-lg justify-between">
         <span>Sports Time : </span>
-        <span>{props}</span>
+        <span>{props.sports_time}</span>
       </div>
       <div className="details p-5 mx-auto w-4/5 my-5 flex  bg-cyan-400 content-center gap-5 text-center text-black rounded-lg justify-between">
         <span>Break Time : </span>
-        <span>{}</span>
+        <span>{break_time}</span>
       </div>
 
       <div className="details p-5 mx-auto w-4/5 mt-10 cursor-pointer bg-cyan-400 content-center text-center text-black rounded-lg">

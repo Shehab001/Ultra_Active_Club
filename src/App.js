@@ -7,7 +7,6 @@ import Title from "./components/Title/Title";
 
 function App() {
   let [sports_time, setSports_time] = useState(0);
-  let [break_time, setBreak_time] = useState(0);
 
   const handleDataClick = (data) => {
     //   //console.log(data);
