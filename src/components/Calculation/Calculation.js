@@ -1,6 +1,7 @@
 import React from "react";
 
-const Calculation = () => {
+const Calculation = (props) => {
+  //console.log(props);
   return (
     <div className="py-20 bg-slate-600 my-10 mx-5 rounded-lg">
       <div className="header flex p-5 ">
@@ -56,11 +57,11 @@ const Calculation = () => {
 
       <div className="details p-5 mx-auto w-4/5 my-5 flex  bg-cyan-400 content-center gap-5 text-center text-black rounded-lg justify-between">
         <span>Sports Time : </span>
-        <span>0Sec</span>
+        <span>{props}</span>
       </div>
       <div className="details p-5 mx-auto w-4/5 my-5 flex  bg-cyan-400 content-center gap-5 text-center text-black rounded-lg justify-between">
         <span>Break Time : </span>
-        <span>0Sec</span>
+        <span>{}</span>
       </div>
 
       <div className="details p-5 mx-auto w-4/5 mt-10 cursor-pointer bg-cyan-400 content-center text-center text-black rounded-lg">

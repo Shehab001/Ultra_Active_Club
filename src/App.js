@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import Calculation from "./components/Calculation/Calculation";
 
@@ -5,8 +6,18 @@ import Main from "./components/Main/Main";
 import Title from "./components/Title/Title";
 
 function App() {
+  let [sports_time, setSports_time] = useState(0);
+  let [break_time, setBreak_time] = useState(0);
+
   const handleDataClick = (data) => {
-    console.log(data);
+    //   //console.log(data);
+    // //console.log(typeof data.time);
+    sports_time += data.time;
+    setSports_time(sports_time);
+    // console.log(sports_time);
+
+    //  break_time += data.time;
+    //  setSports_time(sports_time);
   };
   return (
     <div className="grid  md:grid-cols-3 lg:grid-cols-3 grid-cols-2 font-sans pb-10">
@@ -15,7 +26,7 @@ function App() {
         <Main handleDataClick={handleDataClick}></Main>
       </div>
       <div className="right col-span-1">
-        <Calculation></Calculation>
+        <Calculation sports_time={sports_time}></Calculation>
       </div>
     </div>
   );
