@@ -19,7 +19,9 @@ const Title = () => {
           />
         </svg>
       </span>
-      <h1 className="text-4xl text-amber-100	font-bold">Ultra Sports Details</h1>
+      <h1 className="text-4xl text-amber-100 	font-bold">
+        Ultra Sports Details
+      </h1>
     </div>
   );
 };

@@ -8,6 +8,14 @@ import Title from "./components/Title/Title";
 function App() {
   let [sports_time, setSports_time] = useState(0);
 
+  useEffect(() => {
+    let quantity = parseInt(localStorage.getItem("sports_time"));
+    // console.log(typeof quantity);
+    if (typeof quantity === "number") {
+      setSports_time(quantity);
+    }
+  }, []);
+
   const handleDataClick = (data) => {
     //   //console.log(data);
     // //console.log(typeof data.time);
@@ -17,6 +25,7 @@ function App() {
 
     //  break_time += data.time;
     //  setSports_time(sports_time);
+    localStorage.setItem("sports_time", sports_time);
   };
   return (
     <div className="grid  md:grid-cols-3 lg:grid-cols-3 grid-cols-2 font-sans pb-10">

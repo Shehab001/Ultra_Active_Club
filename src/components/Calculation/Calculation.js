@@ -1,14 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Calculation = (props) => {
   //console.log(props.sports_time);
   let [break_time, setBreak_time] = useState(0);
+
+  useEffect(() => {
+    let quantity = parseInt(localStorage.getItem("breaking_time"));
+    // console.log(quantity);
+    if (typeof quantity === "number") {
+      //alert("hi");
+      setBreak_time(quantity);
+    }
+  }, []);
 
   const setValue = (data) => {
     //alert(typeof data);
     break_time += data;
     //console.log(break_time);
     setBreak_time(break_time);
+
+    localStorage.setItem("breaking_time", break_time);
   };
 
   return (
@@ -44,7 +55,7 @@ const Calculation = (props) => {
 
       <p className="ml-3">Add a Break : </p>
 
-      <div className="details p-5 mx-auto w-4/5 my-5 grid grid-cols-5 bg-cyan-400 content-center gap-5 text-center rounded-lg">
+      <div className="details py-3 mx-auto w-4/5 my-5 grid grid-cols-5 bg-cyan-400 content-center gap-5 text-center rounded-lg justify-center">
         <div className="div w-10 h-10 text-white bg-black rounded-full	 ">
           <p className="pt-2 cursor-pointer">
             <span onClick={() => setValue(10)}>10s</span>
