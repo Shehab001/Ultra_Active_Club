@@ -7,7 +7,7 @@ const Calculation = (props) => {
   useEffect(() => {
     let quantity = parseInt(localStorage.getItem("breaking_time"));
     // console.log(quantity);
-    if (typeof quantity === "number") {
+    if (quantity) {
       //alert("hi");
       setBreak_time(quantity);
     }

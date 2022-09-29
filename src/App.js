@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     let quantity = parseInt(localStorage.getItem("sports_time"));
     // console.log(typeof quantity);
-    if (typeof quantity === "number") {
+    if (quantity) {
       setSports_time(quantity);
     }
   }, []);
