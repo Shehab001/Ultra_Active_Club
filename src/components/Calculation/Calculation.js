@@ -62,6 +62,10 @@ const Calculation = () => {
         <span>Break Time : </span>
         <span>0Sec</span>
       </div>
+
+      <div className="details p-5 mx-auto w-4/5 mt-10 cursor-pointer bg-cyan-400 content-center text-center text-black rounded-lg">
+        <span>Activity Completed </span>
+      </div>
     </div>
   );
 };
