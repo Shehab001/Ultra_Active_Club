@@ -7,7 +7,7 @@ import Title from "./components/Title/Title";
 function App() {
   return (
     <div className="grid  grid-cols-4 font-sans pb-10">
-      <div className="left col-span-3 border-2">
+      <div className="left col-span-3">
         <Title></Title>
         <Main></Main>
       </div>
