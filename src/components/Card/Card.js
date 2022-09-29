@@ -1,12 +1,12 @@
 import React from "react";
 
 const Card = (props) => {
-  console.log(props.handleDataClick);
+  // console.log(props.handleDataClick);
   const { img, name, des, time } = props.data;
   // const { handleDataClick } = props.object;
   return (
     <div>
-      <div className="card w-72 bg-base-100 shadow-xl  bg-cyan-900				">
+      <div className="card lg:w-56 md:w-60 bg-base-100 shadow-xl  bg-cyan-900				">
         <figure className="px-10 pt-10">
           <img src={img} alt="Shoes" className="rounded-xl" />
         </figure>
@@ -16,7 +16,7 @@ const Card = (props) => {
           <h4 className="text-xl font-semibold	 m-3">{time}</h4>
           <div className="card-actions">
             <button
-              onClick={props.handleDataClick}
+              onClick={() => props.handleDataClick(props.data)}
               className="btn btn-primary "
             >
               Add To The Side

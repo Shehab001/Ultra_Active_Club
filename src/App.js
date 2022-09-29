@@ -5,16 +5,16 @@ import Main from "./components/Main/Main";
 import Title from "./components/Title/Title";
 
 function App() {
-  const handleDataClick = () => {
-    alert("hi");
+  const handleDataClick = (data) => {
+    console.log(data);
   };
   return (
-    <div className="grid  grid-cols-4 font-sans pb-10">
-      <div className="left col-span-3">
+    <div className="grid  md:grid-cols-3 lg:grid-cols-3 grid-cols-2 font-sans pb-10">
+      <div className="left md:col-span-2  lg:cols-span-3 cols-span-1">
         <Title></Title>
         <Main handleDataClick={handleDataClick}></Main>
       </div>
-      <div className="right border-2">
+      <div className="right col-span-1">
         <Calculation></Calculation>
       </div>
     </div>

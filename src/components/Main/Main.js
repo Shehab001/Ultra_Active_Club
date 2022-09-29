@@ -57,7 +57,7 @@ const Main = (props) => {
   return (
     <div>
       <p className="text-2xl pl-10 pb-10">Select Todays Game : </p>
-      <div className="grid  grid-cols-3 gap-5 px-5">
+      <div className="grid  lg:grid-cols-3 md:grid-cols-2 gap-5 px-5">
         {datas.map((datta) => (
           <Card
             key={datta.id}
