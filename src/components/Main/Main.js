@@ -2,7 +2,8 @@ import { data } from "autoprefixer";
 import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
 
-const Main = () => {
+const Main = (props) => {
+  // console.log(props.handleDataClick);
   const [datas, setDatas] = useState([]);
 
   useEffect(() => {
@@ -58,7 +59,11 @@ const Main = () => {
       <p className="text-2xl pl-10 pb-10">Select Todays Game : </p>
       <div className="grid  grid-cols-3 gap-5 px-5">
         {datas.map((datta) => (
-          <Card key={datta.id} data={datta}></Card>
+          <Card
+            key={datta.id}
+            data={datta}
+            handleDataClick={props.handleDataClick}
+          ></Card>
         ))}
       </div>
     </div>

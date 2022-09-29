@@ -1,7 +1,9 @@
 import React from "react";
 
 const Card = (props) => {
+  console.log(props.handleDataClick);
   const { img, name, des, time } = props.data;
+  // const { handleDataClick } = props.object;
   return (
     <div>
       <div className="card w-72 bg-base-100 shadow-xl  bg-cyan-900				">
@@ -13,7 +15,12 @@ const Card = (props) => {
           <p>{des}</p>
           <h4 className="text-xl font-semibold	 m-3">{time}</h4>
           <div className="card-actions">
-            <button className="btn btn-primary ">Add To The Side</button>
+            <button
+              onClick={props.handleDataClick}
+              className="btn btn-primary "
+            >
+              Add To The Side
+            </button>
           </div>
         </div>
       </div>
